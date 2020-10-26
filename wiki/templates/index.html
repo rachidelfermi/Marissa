@@ -1,0 +1,88 @@
+{% extends "header.html" %} {% block content %}
+
+<div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+        <div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<h4><strong>chercher içi :</strong></h4>
+					</div>
+                    <div class="col-md-6">
+						<div class="search_bar_list">
+							<input type="text" class="form-control" placeholder="find a machine...">
+							<input type="submit" value="Search">
+						</div>
+					</div>
+                    <div class="col-sm"></div>
+
+				</div>
+				<!-- /row -->
+			</div>
+      </ol>
+ <!--  <div class="filters_listing">
+
+				<ul class="clearfix">
+					<li>
+						<h6>Sort by</h6>
+						<select name="orderby" class="mdb-select md-form">
+						<option value="Closest">Closest</option>
+						<option value="Best rated">Best rated</option>
+						<option value="Men">Men</option>
+						<option value="Women">Women</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+-->
+
+<!--*****************************************************************************************-->
+					<h4 class="nomargin_top">Suggestions</h4>
+					<div role="tablist" class="add_bottom_45 accordion" id="tips">
+                     {% for i in '0123456789'|make_list %}
+                        {% with y=forloop.counter|stringformat:"s" %}
+                        {% with collapseId="collapse"|add:y %}
+						<div class="card">
+							<div class="card-header" role="tab">
+								<h5 class="mb-0">
+                                    clibreuse
+									<a data-toggle="collapse" href="#{{ collapseId }}" aria-expanded="true"><i class="indicator icon_plus_alt2"></i>
+
+						                placerat tacimatesyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea definitionem sea, prima quidam vim no.
+
+                                    </a>
+								</h5>
+							</div>
+
+							<div id="{{ collapseId }}"  class="collapse" role="tabpanel" data-parent="#tips">
+								<div class="strip_list card-body">
+									<p>Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.</p>
+									<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.</p>
+								     <ul>
+                                        <li><a href="{% url 'machine' %}"  class="">View machine</a></li>
+                                        <li><a href="{% url 'problem_solution' %}">read solution</a></li>
+                                    </ul>
+                                </div>
+							</div>
+						</div>
+                        {% endwith %}
+                        {% endwith %}
+                        {% endfor %}
+					</div>
+<!--*****************************************************************************************-->
+
+
+
+
+			<!-- /container -->
+
+	  <!-- Icon Cards-->
+        <p>{{machineInfo}}</p>
+
+     </div>
+
+    <div id=""></div>
+</div>
+
+{% endblock %}
